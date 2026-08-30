@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0A12" />
+  <title>Use Cases — Zyntrix</title>
+  <meta name="description" content="KI-Automatisierung für Steuerberater, Immobilienmakler, Rechtsanwälte, E-Commerce und HR." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 1L20 6v10L11 21 2 16V6L11 1z" stroke="#00d4ff" stroke-width="1.4" fill="none"/>
+            <circle cx="11" cy="11" r="3.2" fill="#00d4ff" opacity="0.85"/>
+            <path d="M11 1v3.5M11 17.5V21M2 6l3 1.7M17 14.3l3 1.7M2 16l3-1.7M17 7.7l3-1.7" stroke="#00d4ff" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+          </svg>
+        </span>
+        ZYNTRIX
+      </a>
+      <div class="nav-center">
+        <a href="leistungen.html">Leistungen</a>
+        <a href="use-cases.html" style="color:var(--white)">Use Cases</a>
+        <a href="team.html">Team</a>
+        <a href="index.html#pricing">Pakete</a>
+        <a href="index.html#process">Ablauf</a>
+      </div>
+      <div class="nav-right">
+        <a href="index.html#contact" class="nav-cta">Erstgespräch →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="leistungen.html">Leistungen</a>
+      <a href="use-cases.html">Use Cases</a>
+      <a href="team.html">Team</a>
+      <a href="index.html#pricing">Pakete</a>
+      <a href="index.html#contact">Erstgespräch</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-glow"></div>
+    <div class="container">
+      <div class="page-hero-content" data-reveal>
+        <p class="page-hero-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><path d="M11 1L20 6v10L11 21 2 16V6L11 1z" stroke="#00d4ff" stroke-width="1.4" fill="none"/><circle cx="11" cy="11" r="3.2" fill="#00d4ff" opacity="0.85"/></svg>
+          Use Cases
+        </p>
+        <h1 class="page-hero-title">KI für Ihre<br /><em style="background:linear-gradient(135deg,#00d4ff,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal">Branche.</em></h1>
+        <p class="page-hero-sub">Konkrete Beispiele wie Zyntrix Steuerberater, Immobilienmakler, Anwälte, E-Commerce-Shops und HR-Teams transformiert.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE: Steuerberater -->
+  <section id="stb" style="padding:100px 0;border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div data-reveal>
+          <span class="section-label">📊 — Steuerberater & Kanzleien</span>
+          <h2 class="section-title">22h Ersparnis<br /><em>pro Woche.</em></h2>
+          <p style="font-size:16px;color:var(--text);line-height:1.75;margin:20px 0 32px;">Steuerberater Maier &amp; Partner, Wien: Von manueller Belegerfassung zu vollautomatischer KI-Verarbeitung — in 10 Tagen implementiert.</p>
+          <ul class="pc-list">
+            <li>Mandanten-FAQ-Chatbot: 80% der Standardfragen automatisch beantwortet</li>
+            <li>Belegklassifizierung: KI erkennt Belegtyp, Betrag, Datum in Sekunden</li>
+            <li>Fristmanagement: Automatische Alerts für USt-Voranmeldung, KÖSt, etc.</li>
+            <li>DATEV &amp; BMD Integration vollständig</li>
+            <li>DSGVO-konform auf österreichischen Servern</li>
+          </ul>
+          <a href="index.html#contact" class="btn-primary magnetic" style="margin-top:8px;" data-cursor="cta">
+            <span class="btn-text">Für meine Kanzlei anfragen</span>
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+        <div data-reveal data-delay="100">
+          <div class="uc-mockup">
+            <div class="ucm-header">
+              <div class="chrome-dots"><span class="cd-red"></span><span class="cd-yellow"></span><span class="cd-green"></span></div>
+              <span class="ucm-title">Steuerberater · Mandanten-Chat</span>
+            </div>
+            <div class="ucm-body">
+              <div class="ucm-msg ucm-user">Wann muss ich die Jahressteuererklärung einreichen?</div>
+              <div class="ucm-msg ucm-bot"><span class="ucm-bot-dot"></span>Die Frist für die Einkommenssteuererklärung 2025 ist der 30. April 2026. Mit steuerlicher Vertretung bis 31. März 2027. Soll ich Sie 4 Wochen vorher erinnern?</div>
+              <div class="ucm-msg ucm-user">Ja, bitte. Und welche Belege brauche ich?</div>
+              <div class="ucm-msg ucm-bot"><span class="ucm-bot-dot"></span>Für Sie relevant: Lohnzettel, Arbeitnehmerveranlagung, Sonderausgaben, Werbungskosten. Checkliste wurde an Ihre E-Mail gesendet ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE: Immobilienmakler -->
+  <section id="immo" style="padding:100px 0;background:var(--bg-2);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div data-reveal data-delay="100">
+          <div class="uc-mockup">
+            <div class="ucm-header">
+              <div class="chrome-dots"><span class="cd-red"></span><span class="cd-yellow"></span><span class="cd-green"></span></div>
+              <span class="ucm-title">Immobilien · Lead-Qualifizierung</span>
+            </div>
+            <div class="ucm-body ucm-dashboard">
+              <div class="ucm-dash-row">
+                <div class="ucm-dash-card"><div class="ucmd-num">47</div><div class="ucmd-label">Leads heute</div></div>
+                <div class="ucm-dash-card hot"><div class="ucmd-num">12</div><div class="ucmd-label">Heiß 🔥</div></div>
+                <div class="ucm-dash-card"><div class="ucmd-num">3</div><div class="ucmd-label">Exposés</div></div>
+              </div>
+              <div class="ucm-lead-item"><span class="ucm-badge hot">🔥 Heiß</span> Maria S. — 3-Zi. Wien · Budget 450k · Sofort</div>
+              <div class="ucm-lead-item"><span class="ucm-badge warm">◎ Warm</span> Peter K. — Haus Graz · Budget 600k · Q2</div>
+              <div class="ucm-lead-item"><span class="ucm-badge cold">○ Kalt</span> Anna B. — Wohnung Linz · Nur Info</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal>
+          <span class="section-label">🏠 — Immobilienmakler & -büros</span>
+          <h2 class="section-title">5× mehr<br /><em>Objekte.</em></h2>
+          <p style="font-size:16px;color:var(--text);line-height:1.75;margin:20px 0 32px;">Immobilien Schmidt GmbH, München: KI-gestützte Lead-Qualifizierung und automatische Exposé-Erstellung haben die Kapazität pro Makler verfünffacht.</p>
+          <ul class="pc-list">
+            <li>Lead-Scoring: KI bewertet Kaufabsicht, Budget, Zeitrahmen automatisch</li>
+            <li>Exposé-Generator: Vollständiges Exposé aus Grundriss + Fotos in 60 Sekunden</li>
+            <li>Besichtigungs-Bot: Terminvereinbarung ohne Sekretariat</li>
+            <li>ImmoScout24 &amp; Willhaben Integration</li>
+            <li>40% mehr qualifizierte Kontakte pro Monat</li>
+          </ul>
+          <a href="index.html#contact" class="btn-primary magnetic" style="margin-top:8px;" data-cursor="cta">
+            <span class="btn-text">Für mein Maklerbüro anfragen</span>
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE: Rechtsanwalt -->
+  <section id="law" style="padding:100px 0;border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div data-reveal>
+          <span class="section-label">⚖️ — Rechtsanwälte & Notare</span>
+          <h2 class="section-title">Dokumente.<br /><em>Automatisch.</em></h2>
+          <p style="font-size:16px;color:var(--text);line-height:1.75;margin:20px 0 32px;">Kanzlei Weber &amp; Co, Wien: Dokumentenklassifikation und Termin-Intake via KI haben die Verwaltungsarbeit um 65% reduziert.</p>
+          <ul class="pc-list">
+            <li>Dokument-Klassifikation: Klage, Vollmacht, Vertrag automatisch erkannt</li>
+            <li>Termin-Intake: Mandanten buchen online, KI erfasst den Fall</li>
+            <li>Fristenkalender mit automatischen Erinnerungen</li>
+            <li>DSGVO-konforme Datenhaltung, verschlüsselt</li>
+            <li>Mandanten-FAQ 24/7 via Chat</li>
+          </ul>
+          <a href="index.html#contact" class="btn-primary magnetic" style="margin-top:8px;" data-cursor="cta">
+            <span class="btn-text">Für meine Kanzlei anfragen</span>
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+        <div data-reveal data-delay="100">
+          <div class="uc-mockup">
+            <div class="ucm-header">
+              <div class="chrome-dots"><span class="cd-red"></span><span class="cd-yellow"></span><span class="cd-green"></span></div>
+              <span class="ucm-title">Kanzlei · Dokument-Klassifikation</span>
+            </div>
+            <div class="ucm-body ucm-docs">
+              <div class="ucm-doc-row"><span class="ucm-doc-icon">📄</span><span class="ucm-doc-name">Klage_2026-04-01.pdf</span><span class="ucm-doc-tag">Zivilrecht ✓</span></div>
+              <div class="ucm-doc-row"><span class="ucm-doc-icon">📄</span><span class="ucm-doc-name">Vollmacht_Weber.pdf</span><span class="ucm-doc-tag">Vollmacht ✓</span></div>
+              <div class="ucm-doc-row"><span class="ucm-doc-icon">📄</span><span class="ucm-doc-name">Vertrag_Muster_GmbH.docx</span><span class="ucm-doc-tag">Gesellschaftsrecht ✓</span></div>
+              <div class="ucm-doc-row processing"><span class="ucm-doc-icon">⏳</span><span class="ucm-doc-name">Berufungsschrift_April.pdf</span><span class="ucm-doc-tag">Analysiere …</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE: E-Commerce -->
+  <section id="ecom" style="padding:100px 0;background:var(--bg-2);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div data-reveal data-delay="100">
+          <div class="uc-mockup">
+            <div class="ucm-header">
+              <div class="chrome-dots"><span class="cd-red"></span><span class="cd-yellow"></span><span class="cd-green"></span></div>
+              <span class="ucm-title">Shop · Support-Bot</span>
+            </div>
+            <div class="ucm-body">
+              <div class="ucm-msg ucm-user">Wo ist meine Bestellung #4821?</div>
+              <div class="ucm-msg ucm-bot"><span class="ucm-bot-dot"></span>Ihre Bestellung ist heute in Wien angekommen und wird zwischen 14–18 Uhr geliefert. Tracking-Link wurde per E-Mail gesendet.</div>
+              <div class="ucm-msg ucm-user">Ich möchte Artikel 3 retournieren.</div>
+              <div class="ucm-msg ucm-bot"><span class="ucm-bot-dot"></span>Retourenformular wurde ausgefüllt. PDF liegt in Ihrer E-Mail. Abholtermin: Donnerstag ✓</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal>
+          <span class="section-label">🛒 — Online-Shops & E-Commerce</span>
+          <h2 class="section-title">60% weniger<br /><em>Tickets.</em></h2>
+          <p style="font-size:16px;color:var(--text);line-height:1.75;margin:20px 0 32px;">Online Shop Bergmann, Hamburg: KI-Kundensupport und automatisierte Retourenabwicklung haben das Support-Team halbiert — bei höherer Kundenzufriedenheit.</p>
+          <ul class="pc-list">
+            <li>24/7 Support-Bot: Tracking, Retouren, Produktfragen automatisch</li>
+            <li>Automatische Retourenabwicklung inklusive Label-Erstellung</li>
+            <li>Abandoned-Cart: KI-Erinnerung mit personalisierten Angeboten</li>
+            <li>Shopify, WooCommerce, Magento Integration</li>
+            <li>NPS um 23 Punkte gestiegen</li>
+          </ul>
+          <a href="index.html#contact" class="btn-primary magnetic" style="margin-top:8px;" data-cursor="cta">
+            <span class="btn-text">Für meinen Shop anfragen</span>
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE: HR -->
+  <section id="hr" style="padding:100px 0;border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div data-reveal>
+          <span class="section-label">👥 — HR & Recruiting-Teams</span>
+          <h2 class="section-title">70% weniger<br /><em>Screening-Aufwand.</em></h2>
+          <p style="font-size:16px;color:var(--text);line-height:1.75;margin:20px 0 32px;">HR Solutions Wien: KI-gestütztes CV-Screening und automatisierte Kandidatenkommunikation haben die Time-to-Hire auf unter 3 Wochen reduziert.</p>
+          <ul class="pc-list">
+            <li>CV-Screening: KI bewertet Kandidaten nach Job-Fit-Score</li>
+            <li>Kandidaten-Bot: Automatische Erstgespräche via Chat</li>
+            <li>Interview-Terminierung vollautomatisch</li>
+            <li>Personio, Recruitee, Workday Integration</li>
+            <li>Bias-Reduzierung durch strukturierten KI-Prozess</li>
+          </ul>
+          <a href="index.html#contact" class="btn-primary magnetic" style="margin-top:8px;" data-cursor="cta">
+            <span class="btn-text">Für mein HR-Team anfragen</span>
+            <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+        <div data-reveal data-delay="100">
+          <div class="uc-mockup">
+            <div class="ucm-header">
+              <div class="chrome-dots"><span class="cd-red"></span><span class="cd-yellow"></span><span class="cd-green"></span></div>
+              <span class="ucm-title">HR · Kandidaten-Pipeline</span>
+            </div>
+            <div class="ucm-body ucm-pipeline">
+              <div class="ucm-pipe-stage">
+                <div class="ucm-pipe-label">Eingang (23)</div>
+                <div class="ucm-pipe-card">Anna M. · UX · 92% Match</div>
+                <div class="ucm-pipe-card">Lukas F. · Dev · 88% Match</div>
+              </div>
+              <div class="ucm-pipe-arrow">→</div>
+              <div class="ucm-pipe-stage">
+                <div class="ucm-pipe-label">Screening (8)</div>
+                <div class="ucm-pipe-card hot">Sarah K. · PM · Interview ✓</div>
+              </div>
+              <div class="ucm-pipe-arrow">→</div>
+              <div class="ucm-pipe-stage">
+                <div class="ucm-pipe-label">Angebot (2)</div>
+                <div class="ucm-pipe-card hot">Marc B. · CTO · Offer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:100px 0;background:var(--bg-2);">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title" data-reveal>Ihre Branche nicht dabei?</h2>
+      <p style="font-size:16px;color:var(--text);margin:20px auto 40px;max-width:500px;" data-reveal data-delay="80">Wir haben KI-Lösungen für dutzende weitere Branchen. Sprechen Sie uns an — kostenloses Erstgespräch, kein Druck.</p>
+      <a href="index.html#contact" class="btn-primary magnetic" data-reveal data-delay="120" data-cursor="cta">
+        <span class="btn-text">Kostenloses Erstgespräch</span>
+        <span class="btn-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img src="logo.jpg" alt="Zyntrix" class="logo-img">
+            ZYNTRIX
+          </a>
+          <p class="footer-tagline">Wir automatisieren Ihr Unternehmen mit KI.<br />DACH · Wien · EST. 2026</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Leistungen</h4><ul><li><a href="leistungen.html">Dokumenten-Automation</a></li><li><a href="leistungen.html">Kunden-Chatbots</a></li><li><a href="leistungen.html">Workflow-Automatisierung</a></li></ul></div>
+        <div class="footer-col"><h4>Unternehmen</h4><ul><li><a href="team.html">Team</a></li><li><a href="use-cases.html">Use Cases</a></li><li><a href="index.html#pricing">Pakete</a></li></ul></div>
+        <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:office@zyntrix.co">office@zyntrix.co</a></li><li><a href="#">Wien, Österreich</a></li><li><a href="#">Impressum</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Zyntrix. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
