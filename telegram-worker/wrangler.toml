@@ -1,0 +1,15 @@
+name = "zyntrix-telegram-lead"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+# Nur diese Origins dürfen den Worker aufrufen (kommasepariert, ohne Slash am Ende).
+ALLOWED_ORIGINS = "https://zyntrix.co,https://www.zyntrix.co"
+
+# Optional: Wenn die Telegram-Gruppe Themen/Topics nutzt, hier die Topic-ID setzen.
+# TELEGRAM_THREAD_ID = "12"
+
+# TELEGRAM_BOT_TOKEN und TELEGRAM_CHAT_ID NICHT hier eintragen –
+# die werden als Secrets gesetzt:
+#   npx wrangler secret put TELEGRAM_BOT_TOKEN
+#   npx wrangler secret put TELEGRAM_CHAT_ID
