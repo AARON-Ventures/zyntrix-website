@@ -62,7 +62,7 @@ static TELEGRAM_ENDPOINT = '';
 auf die Worker-URL setzen:
 
 ```js
-static TELEGRAM_ENDPOINT = 'https://zyntrix-telegram-lead.<subdomain>.workers.dev';
+static TELEGRAM_ENDPOINT = 'https://zyntrix-telegram-lead.office-21e.workers.dev';
 ```
 
 Solange der Wert leer ist, ist der Telegram-Versand einfach inaktiv – das
@@ -73,7 +73,7 @@ Danach committen und pushen; GitHub Pages baut automatisch neu.
 ## 4. Testen
 
 ```bash
-curl -X POST https://zyntrix-telegram-lead.<subdomain>.workers.dev \
+curl -X POST https://zyntrix-telegram-lead.office-21e.workers.dev \
   -H 'Content-Type: application/json' \
   -H 'Origin: https://zyntrix.co' \
   -d '{"name":"Testlauf","firma":"Testfirma","email":"test@example.com","telefon":"+43 660 1234567","zeitfresser":"Angebote schreiben"}'
