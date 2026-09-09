@@ -33,8 +33,37 @@ fbq("track", "PageView");
 src="https://www.facebook.com/tr?id=1392514952248366&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<!-- Das Lead-Event feuert bereits auf der Startseite beim erfolgreichen Absenden,
-     hier bewusst nur PageView, damit ein Lead nicht doppelt gezählt wird. -->
+
+<!-- Lead-Event: Es feuert bewusst hier und nicht schon beim Klick auf der
+     Startseite - erst wenn diese Seite geladen ist, ist belegt, dass die
+     Anfrage tatsaechlich durchgelaufen ist.
+
+     Damit ein direkter Aufruf, ein Neuladen oder ein Besuch ueber den
+     Verlauf keinen zweiten Lead zaehlt, feuert es nur, wenn das Formular
+     zuvor ein Token im sessionStorage hinterlegt hat. Das Token wird beim
+     Lesen sofort entfernt und ist nach 30 Minuten ohnehin verfallen.
+
+     Die eventID stammt aus demselben Token wie der Rueckfall auf der
+     Startseite (falls die Weiterleitung dort blockiert wird). Meta fuehrt
+     zwei Ereignisse mit gleicher eventID zu einem zusammen. -->
+<script>
+(function () {
+  var KEY = 'zyntrix:lead';
+  var TTL = 30 * 60 * 1000;
+
+  var raw = null;
+  try { raw = window.sessionStorage.getItem(KEY); } catch (err) { return; }
+  if (!raw) return;
+  try { window.sessionStorage.removeItem(KEY); } catch (err) {}
+
+  var token = null;
+  try { token = JSON.parse(raw); } catch (err) { return; }
+  if (!token || !token.eventId || !token.ts) return;
+  if (Date.now() - token.ts > TTL) return;
+
+  fbq('track', 'Lead', {}, { eventID: token.eventId });
+})();
+</script>
 
 <style>
   /* Farben und Typografie sind identisch zur Startseite. */
