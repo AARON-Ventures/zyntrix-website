@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico?v=3" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/site.webmanifest">
   <title>Bundled Page</title>
   <style>
@@ -331,6 +331,27 @@ document.addEventListener('DOMContentLoaded', async function() {
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
     document.documentElement.replaceWith(doc.documentElement);
+
+    // Force tab favicon after documentElement swap (Chrome otherwise keeps default).
+    (function refreshFavicon() {
+      try {
+        document.querySelectorAll('link[rel*="icon"], link[rel="apple-touch-icon"]').forEach(function (el) {
+          if (el && el.parentNode) el.parentNode.removeChild(el);
+        });
+        function addIcon(rel, href, type, sizes) {
+          var l = document.createElement('link');
+          l.rel = rel;
+          l.href = href;
+          if (type) l.type = type;
+          if (sizes) l.setAttribute('sizes', sizes);
+          document.head.appendChild(l);
+        }
+        addIcon('icon', '/favicon-32x32.png?v=3', 'image/png', '32x32');
+        addIcon('icon', '/favicon-16x16.png?v=3', 'image/png', '16x16');
+        addIcon('icon', '/favicon.ico?v=3', 'image/x-icon', 'any');
+        addIcon('apple-touch-icon', '/apple-touch-icon.png?v=3');
+      } catch (e) {}
+    })();
 
     // Resolve page-frame markers: mint this document's own blob for each
     // framed page — from local text when this is the root, otherwise by
