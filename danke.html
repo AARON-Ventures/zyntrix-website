@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danke — Ihre Anfrage ist bei uns · Zyntrix</title>
+<meta name="description" content="Ihre Anfrage ist bei Zyntrix eingegangen. Wir melden uns innerhalb von 24 Stunden mit einem Terminvorschlag für Ihr kostenloses Erstgespräch.">
+<!-- Danke-Seite: nicht indexieren, sie ist nur nach dem Absenden des Formulars erreichbar. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,"script",
+"https://connect.facebook.net/en_US/fbevents.js");
+fbq("init", "1392514952248366");
+fbq("track", "PageView");
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1392514952248366&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Das Lead-Event feuert bereits auf der Startseite beim erfolgreichen Absenden,
+     hier bewusst nur PageView, damit ein Lead nicht doppelt gezählt wird. -->
+
+<style>
+  /* Farben und Typografie sind identisch zur Startseite. */
+  :root {
+    --dark: #20434F;
+    --dark-2: #2A5361;
+    --line-dark: #3E6270;
+    --lime: #D2E245;
+    --lime-line: #C6D63C;
+    --text: #556E77;
+    --muted: #8A9BA1;
+    --line: #E2E7E8;
+    --line-soft: #EDF0F0;
+    --panel: #F2F4F4;
+    --tint: #F9F9EE;
+    --on-dark: #B9CBD1;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: var(--dark); text-decoration: none; }
+  a:hover { color: var(--dark-2); }
+  h1, h2, h3, .grotesk { font-family: 'Space Grotesk', sans-serif; }
+
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  section { padding: clamp(56px, 6vw, 96px) clamp(20px, 5vw, 56px); }
+
+  /* ---------- Kopfzeile ---------- */
+  header {
+    position: fixed; top: 0; z-index: 50; width: 100%;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .headbar {
+    max-width: 1200px; margin: 0 auto;
+    padding: 10px clamp(20px, 5vw, 56px);
+    min-height: 70px; display: flex; align-items: center; gap: 20px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.22em; color: var(--dark); }
+  .brand-sep { width: 1px; height: 20px; background: var(--line); }
+  .brand-avatar { width: 26px; height: 26px; border-radius: 50%; display: block; }
+  .brand-tagline { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); white-space: nowrap; }
+  .head-nav { margin-left: auto; display: flex; align-items: center; gap: clamp(10px, 1.3vw, 20px); white-space: nowrap; }
+  .head-nav a { font-size: 13.5px; font-weight: 500; color: var(--text); }
+  .btn-lime {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--lime); border: 1px solid var(--lime-line); color: var(--dark);
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px;
+    padding: 11px 18px; border-radius: 8px; white-space: nowrap;
+  }
+  .btn-lime:hover { color: var(--dark); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #FFFFFF; border: 1px solid var(--line); color: var(--dark);
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14.5px;
+    padding: 13px 20px; border-radius: 8px;
+  }
+  .btn-ghost-dark {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; border: 1px solid var(--line-dark); color: #FFFFFF;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14.5px;
+    padding: 13px 20px; border-radius: 8px;
+  }
+  .btn-ghost-dark:hover { color: #FFFFFF; border-color: var(--on-dark); }
+  main { padding-top: 70px; }
+
+  /* ---------- Bestätigung ---------- */
+  .confirm { background: var(--dark); }
+  .confirm-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: clamp(28px, 4vw, 56px); align-items: start;
+  }
+  .rule { width: 56px; height: 4px; background: var(--lime); margin-bottom: 22px; }
+  .badge {
+    display: inline-block; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dark); background: var(--lime); padding: 6px 11px; border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .confirm h1 {
+    font-weight: 700; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.1;
+    letter-spacing: -0.03em; color: #FFFFFF; margin: 0 0 20px; text-wrap: pretty;
+  }
+  .confirm-lead {
+    font-size: clamp(16px, 1.2vw, 18px); line-height: 1.65; color: var(--on-dark);
+    margin: 0 0 32px; max-width: 540px; text-wrap: pretty;
+  }
+  .confirm-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .steps { display: grid; gap: 22px; }
+  .step { display: flex; gap: 18px; align-items: flex-start; border-top: 1px solid var(--line-dark); padding-top: 18px; }
+  .step-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: var(--lime); flex: 0 0 auto; }
+  .step h3 { font-weight: 600; font-size: 16.5px; color: #FFFFFF; margin: 0 0 5px; }
+  .step p { font-size: 14.5px; line-height: 1.6; color: var(--on-dark); margin: 0; }
+  .contact-note {
+    margin-top: 30px; border-top: 1px solid var(--line-dark); padding-top: 18px;
+    font-size: 14.5px; line-height: 1.7; color: var(--on-dark);
+  }
+  .contact-note a { color: var(--lime); }
+  .contact-note a:hover { color: var(--lime); text-decoration: underline; }
+
+  /* ---------- Abschnitts-Köpfe ---------- */
+  .eyebrow {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px;
+    letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px;
+  }
+  h2 {
+    font-weight: 700; font-size: clamp(26px, 3vw, 40px); line-height: 1.15;
+    letter-spacing: -0.03em; color: var(--dark); margin: 0 0 18px; text-wrap: pretty;
+  }
+  .section-lead { font-size: clamp(15.5px, 1.1vw, 17px); line-height: 1.7; color: var(--text); margin: 0 0 40px; max-width: 720px; text-wrap: pretty; }
+
+  /* ---------- Zeitplan ---------- */
+  .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+  .tl-card { background: #FFFFFF; border: 1px solid var(--line); border-radius: 10px; padding: 22px 22px 24px; box-shadow: 0 1px 2px rgba(32,67,79,0.06); }
+  .tl-day { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dark); background: var(--tint); border: 1px solid var(--lime-line); border-radius: 4px; padding: 4px 9px; display: inline-block; margin-bottom: 14px; }
+  .tl-card h3 { font-weight: 600; font-size: 16.5px; color: var(--dark); margin: 0 0 8px; }
+  .tl-card p { font-size: 14.5px; line-height: 1.65; margin: 0; }
+  .promise {
+    margin-top: 28px; background: var(--panel); border-left: 4px solid var(--lime);
+    border-radius: 0 10px 10px 0; padding: 20px 24px;
+    font-size: 15px; line-height: 1.7; color: var(--text);
+  }
+  .promise strong { color: var(--dark); font-family: 'Space Grotesk', sans-serif; }
+
+  /* ---------- Leistungen / Karten ---------- */
+  .band { background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .card { background: #FFFFFF; border: 1px solid var(--line); border-radius: 10px; padding: 26px; box-shadow: 0 1px 2px rgba(32,67,79,0.06); }
+  .card-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; color: var(--muted); letter-spacing: 0.1em; display: block; margin-bottom: 12px; }
+  .card h3 { font-weight: 600; font-size: 18px; color: var(--dark); margin: 0 0 10px; }
+  .card p { font-size: 15px; line-height: 1.7; margin: 0; }
+
+  /* ---------- Datenschutz ---------- */
+  .privacy-card { background: #FFFFFF; border: 1px solid var(--line); border-radius: 10px; padding: 26px; box-shadow: 0 1px 2px rgba(32,67,79,0.06); }
+  .privacy-card.is-highlight { border-color: var(--lime-line); background: var(--tint); }
+  .tag { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 4px 9px; display: inline-block; margin-bottom: 14px; }
+  .privacy-card h3 { font-weight: 700; font-size: 19px; color: var(--dark); margin: 0 0 6px; }
+  .privacy-card .sub { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--muted); margin: 0 0 12px; }
+  .privacy-card p { font-size: 14.5px; line-height: 1.7; margin: 0; }
+
+  /* ---------- Vorbereitung ---------- */
+  .prep { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(28px, 4vw, 56px); align-items: start; }
+  .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .checklist li { display: flex; gap: 13px; align-items: flex-start; font-size: 15.5px; line-height: 1.65; }
+  .check { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: var(--tint); border: 1px solid var(--lime-line); color: var(--dark); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .checklist strong { color: var(--dark); font-weight: 600; }
+
+  /* Chat-Beispiel, wie auf der Startseite */
+  .chat { background: #FFFFFF; border: 1px solid var(--line); border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(32,67,79,0.06); }
+  .chat-head { display: flex; align-items: center; gap: 11px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); margin-bottom: 16px; }
+  .chat-head img { width: 34px; height: 34px; border-radius: 50%; display: block; }
+  .chat-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; color: var(--dark); }
+  .chat-status { font-size: 12.5px; color: var(--muted); }
+  .bubbles { display: grid; gap: 10px; }
+  .bubble { max-width: 88%; font-size: 14.5px; line-height: 1.6; padding: 12px 14px; border-radius: 12px; }
+  .bubble.them { background: var(--panel); color: var(--text); border-bottom-left-radius: 4px; justify-self: start; }
+  .bubble.you { background: var(--tint); border: 1px solid var(--lime-line); color: var(--dark); border-bottom-right-radius: 4px; justify-self: end; }
+  .bubble-time { display: block; margin-top: 6px; font-size: 11.5px; color: var(--muted); }
+
+  /* ---------- Fußzeile ---------- */
+  footer.site { padding: clamp(48px, 5vw, 72px) clamp(20px, 5vw, 56px) 40px; background: var(--panel); border-top: 1px solid var(--line); }
+  .foot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+  .foot-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  .foot-links { display: grid; gap: 9px; }
+  .foot-links a { font-size: 14.5px; color: var(--text); }
+  .foot-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .foot-brand img { width: 24px; height: 24px; border-radius: 50%; display: block; }
+  .foot-note { font-size: 13px; line-height: 1.6; color: var(--muted); margin: 24px 0 0; }
+
+  @media (max-width: 900px) {
+    .head-nav { display: none; }
+    .headbar { min-height: 62px; gap: 12px; }
+    main { padding-top: 62px; }
+  }
+  @media (max-width: 560px) {
+    .brand-tagline, .brand-sep { display: none; }
+  }
+  @media (max-width: 680px) {
+    .confirm-grid, .prep, .timeline, .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <a class="brand" href="index.html">
+      <span class="brand-name">ZYNTRIX</span>
+      <span class="brand-sep"></span>
+      <img class="brand-avatar" src="nils-avatar.png" alt="Nils" width="26" height="26">
+      <span class="brand-tagline">Nils — Ihr KI-Mitarbeiter</span>
+    </a>
+    <nav class="head-nav">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#branchen">Branchen</a>
+      <a href="index.html#modelle">Modelle</a>
+      <a href="index.html#datenschutz">Datenschutz</a>
+      <a href="index.html#ablauf">Ablauf</a>
+    </nav>
+    <a class="btn-lime" href="index.html">Zur Startseite →</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- BESTÄTIGUNG -->
+  <section class="confirm">
+    <div class="wrap confirm-grid">
+      <div>
+        <div class="rule"></div>
+        <span class="badge">Anfrage eingegangen</span>
+        <h1>Danke — wir melden uns innerhalb von 24 Stunden.</h1>
+        <p class="confirm-lead">Ihre Anfrage liegt bei uns im Postfach. Sie bekommen von uns einen Terminvorschlag für 30 Minuten, per Video oder vor Ort. Bringen Sie zwei bis drei konkrete Abläufe mit, die im Alltag Zeit kosten — genau daran arbeiten wir im Gespräch.</p>
+        <div class="confirm-actions">
+          <a class="btn-lime" href="index.html#leistungen">Ansehen, was Nils kann →</a>
+          <a class="btn-ghost-dark" href="index.html">Zurück zur Startseite</a>
+        </div>
+        <p class="contact-note">
+          Etwas vergessen oder dringend? Schreiben Sie uns direkt an
+          <a href="mailto:office@zyntrix.co">office@zyntrix.co</a> — dieselben Leute, die auch Ihr System aufsetzen.<br>
+          Kein Newsletter, keine Weitergabe Ihrer Daten.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Erstgespräch</h3>
+            <p>30 Minuten, per Video oder vor Ort. Kostenlos und unverbindlich.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Schriftlicher Vorschlag</h3>
+            <p>Vorlagen, Rollen und Datenschutzvariante — auf Ihren Betrieb zugeschnitten, mit Preis und Zeitplan.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Einrichtung</h3>
+            <p>In der Regel innerhalb von zehn Tagen. Danach arbeitet Nils an echten Anfragen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Wie es weitergeht</p>
+      <h2>Von der Bestellung bis zur Auswertung: 30 Tage.</h2>
+      <p class="section-lead">Kein Projektplan mit offenem Ende. Fünf Termine, alle vorab benannt, jeder mit einem Ergebnis.</p>
+      <div class="timeline">
+        <div class="tl-card">
+          <span class="tl-day">Tag 0</span>
+          <h3>Bestellung &amp; Fragebogen</h3>
+          <p>Ein kurzer Fragebogen zu Leistungen, Tonalität und Systemen. Mehr brauchen wir nicht.</p>
+        </div>
+        <div class="tl-card">
+          <span class="tl-day">Tag 1–2</span>
+          <h3>Einrichtung bei uns</h3>
+          <p>Wir konfigurieren das Gerät vor, laden Ihre Vorlagen und testen die gewählten Abläufe.</p>
+        </div>
+        <div class="tl-card">
+          <span class="tl-day">Tag 2–3</span>
+          <h3>Einrichtungstermin vor Ort</h3>
+          <p>2 bis 4 Stunden in Ihrem Betrieb, gemeinsam mit den Personen, die Nils täglich nutzen.</p>
+        </div>
+        <div class="tl-card">
+          <span class="tl-day">Tag 5</span>
+          <h3>Check-in-Anruf</h3>
+          <p>Was läuft, was nervt, was fehlt. Feinjustierung noch in derselben Woche.</p>
+        </div>
+        <div class="tl-card">
+          <span class="tl-day">Tag 30</span>
+          <h3>Auswertung mit echten Zahlen</h3>
+          <p>Bearbeitete Anfragen und erzeugte Dokumente, umgerechnet in Stunden und Euro.</p>
+        </div>
+      </div>
+      <p class="promise"><strong>Unsere Zusage:</strong> Nach dem Einrichtungstermin muss mindestens ein Anwendungsfall selbstständig funktionieren. Wenn nicht, kommen wir kostenlos ein zweites Mal.</p>
+    </div>
+  </section>
+
+  <!-- PRODUKT -->
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow">Bis zum Gespräch</p>
+      <h2>Das übernimmt Nils in Ihrem Betrieb.</h2>
+      <p class="section-lead">Sechs Abläufe, die in jedem Betrieb Zeit kosten. Sie entscheiden pro Ablauf, ob Nils selbst verschickt oder Ihnen einen Entwurf zur Freigabe vorlegt. Bedient wird er über WhatsApp oder Telegram — kein Login, keine Schulung, keine neue Software.</p>
+      <div class="cards">
+        <div class="card">
+          <span class="card-num">01</span>
+          <h3>Angebot in Sekunden</h3>
+          <p>Fünf Zeilen vom Ortstermin oder eine Sprachnachricht — der Kostenvoranschlag ist fertig, bevor Sie im Auto sitzen.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">02</span>
+          <h3>Antwort um Mitternacht</h3>
+          <p>Die Anfrage um 23:40 wartet nicht bis Montag. Nils antwortet in Sekunden — in Ihrer Tonalität, mit Ihren Konditionen.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">03</span>
+          <h3>Bewertungen beantwortet</h3>
+          <p>Jede Google-Bewertung professionell beantwortet, auch die kritische, binnen Stunden statt Wochen.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">04</span>
+          <h3>Rechnungen nachfassen</h3>
+          <p>Erinnerung nach 14, 21 und 28 Tagen, eskalierend im Ton — ohne dass jemand im Haus daran denken muss.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">05</span>
+          <h3>Morgenbriefing um 7 Uhr</h3>
+          <p>Termine, offene Anfragen, Prioritäten des Tages, ablaufende Angebote — alles vor dem ersten Kaffee.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">06</span>
+          <h3>Dokumente und Auswertungen</h3>
+          <p>Protokolle, Präsentationen, Tabellen und Auswertungen — auf Zuruf erstellt, mit Quellenangabe aus Ihren Unterlagen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATENSCHUTZ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Datenschutz</p>
+      <h2>Sie wählen, wo Ihre Daten verarbeitet werden.</h2>
+      <p class="section-lead">Im Erstgespräch legen wir eine der drei Varianten fest und halten sie schriftlich fest. Ein Wechsel ist jederzeit möglich, ohne Neuaufsetzen. Alles, was Zyntrix selbst betreibt, liegt in jeder Variante auf Servern in Europa.</p>
+      <div class="cards">
+        <div class="privacy-card">
+          <span class="tag">Branchenüblich</span>
+          <h3>Standard</h3>
+          <p class="sub">Beste Sprachqualität</p>
+          <p>Der benötigte Anfrageausschnitt geht an einen etablierten Cloud-Anbieter, gestützt auf EU-Standardvertragsklauseln. Preisliste, Vorlagen und Firmenwissen bleiben auf dem Gerät in Ihrem Betrieb.</p>
+        </div>
+        <div class="privacy-card is-highlight">
+          <span class="tag">Der Regelfall</span>
+          <h3>Hybrid</h3>
+          <p class="sub">Klassifizierung je Vorlage</p>
+          <p>Pro Vorlage festgelegt und dokumentiert: Was personenbezogen oder intern ist, bleibt lokal. Marketing- und allgemeine Textarbeit läuft über die Cloud-Variante.</p>
+        </div>
+        <div class="privacy-card">
+          <span class="tag">Restrisiko gering</span>
+          <h3>DSGVO-Safe</h3>
+          <p class="sub">Verarbeitung im Haus</p>
+          <p>Die Textverarbeitung läuft mit lokal installierten Modellen auf dem Gerät in Ihrem Betrieb — grundsätzlich auch ohne Internetverbindung. Keine Übermittlung an Dritte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VORBEREITUNG -->
+  <section class="band">
+    <div class="wrap prep">
+      <div>
+        <p class="eyebrow">Ihre Vorbereitung</p>
+        <h2>Damit die 30 Minuten etwas bringen.</h2>
+        <p class="section-lead" style="margin-bottom:28px">Sie müssen nichts vorbereiten — aber wenn Sie diese vier Dinge parat haben, zeigen wir Ihnen im Erstgespräch bereits Ihren eigenen Fall statt einer Folienshow.</p>
+        <ul class="checklist">
+          <li><span class="check">✓</span><span><strong>Ihre drei größten Zeitfresser.</strong> Die Aufgaben, die abends liegen bleiben oder ständig verschoben werden.</span></li>
+          <li><span class="check">✓</span><span><strong>Ein bis zwei echte Beispiele.</strong> Ein typisches Angebot, eine typische Kundenanfrage, ein Bericht — daran sieht man Tonalität und Aufbau.</span></li>
+          <li><span class="check">✓</span><span><strong>Ihre Systeme.</strong> Womit arbeiten Sie heute: CRM, ERP, Buchhaltung, Kalender, Warenwirtschaft?</span></li>
+          <li><span class="check">✓</span><span><strong>Wer Nils bedienen soll.</strong> Eine Person, ein Team oder mehrere Standorte — das entscheidet über Rollen und Freigaben.</span></li>
+        </ul>
+      </div>
+      <div class="chat">
+        <div class="chat-head">
+          <img src="nils-avatar.png" alt="Nils" width="34" height="34">
+          <div>
+            <div class="chat-name">Nils</div>
+            <div class="chat-status">WhatsApp · online</div>
+          </div>
+        </div>
+        <div class="bubbles">
+          <div class="bubble you">Sprachnachricht 0:26 — „Berger, Hauptstraße 14, Bad komplett, Therme tauschen."<span class="bubble-time">07:41 ✓✓</span></div>
+          <div class="bubble them">KV-2026-0147_Berger.pdf — Kostenvoranschlag fertig, Standardposition Therme verwendet. Soll ich ihn direkt verschicken?<span class="bubble-time">07:42</span></div>
+          <div class="bubble you">Passt. Und die offene Rechnung Ferstl?<span class="bubble-time">07:44 ✓✓</span></div>
+          <div class="bubble them">Zweite Erinnerung geht um 08:00 raus. Bei 28 Tagen melde ich mich wieder.<span class="bubble-time">07:44</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABSCHLUSS -->
+  <section>
+    <div class="wrap" style="text-align:center">
+      <p class="eyebrow" style="margin-bottom:14px">Bis bald</p>
+      <h2 style="max-width:760px;margin:0 auto 18px">Wir melden uns. In der Zwischenzeit: schauen Sie sich in Ruhe um.</h2>
+      <p class="section-lead" style="margin:0 auto 32px">Branchenbeispiele, die Vorlagen-Bibliothek, die verfügbaren Modelle und die Referenzen aus fünf Branchen finden Sie auf der Startseite.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a class="btn-lime" href="index.html#branchen">Branchenbeispiele ansehen →</a>
+        <a class="btn-ghost" href="index.html#vorlagen">Vorlagen-Bibliothek</a>
+        <a class="btn-ghost" href="index.html#referenzen">Referenzen</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-name" style="font-size:16px">ZYNTRIX</span>
+          <img src="nils-avatar.png" alt="Nils" width="24" height="24">
+        </div>
+        <p style="font-size:14.5px;line-height:1.65;color:var(--text);margin:0">Nils, Ihr KI-Mitarbeiter für WhatsApp und Telegram.<br>Wien, Österreich · zyntrix.co</p>
+      </div>
+      <div>
+        <p class="foot-title">Produkt</p>
+        <div class="foot-links">
+          <a href="index.html#leistungen">Leistungen</a>
+          <a href="index.html#branchen">Branchen</a>
+          <a href="index.html#vorlagen">Vorlagen-Bibliothek</a>
+          <a href="index.html#umfang">Umfang &amp; Anfrage</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot-title">Vertrauen</p>
+        <div class="foot-links">
+          <a href="index.html#datenschutz">Datenschutzvarianten</a>
+          <a href="index.html#referenzen">Referenzen</a>
+          <a href="index.html#ablauf">Ablauf in 30 Tagen</a>
+          <a href="index.html#faq">Häufige Fragen</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot-title">Kontakt</p>
+        <div class="foot-links">
+          <a href="mailto:office@zyntrix.co">office@zyntrix.co</a>
+          <a href="index.html#team">Team</a>
+          <a href="index.html#">Impressum</a>
+          <a href="index.html#">Datenschutzerklärung</a>
+        </div>
+      </div>
+    </div>
+    <p class="foot-note">© 2026 Zyntrix · Wien · Verträge nach österreichischem Recht, Gerichtsstand Wien. Angaben zu Datenschutzvarianten und Zertifizierungen sind eine Beschreibung unserer Umsetzung und ersetzen keine Rechtsberatung.</p>
+  </div>
+</footer>
+
+</body>
+</html>
