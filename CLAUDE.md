@@ -34,14 +34,14 @@ Normales, handgeschriebenes HTML (~70 KB, eine Datei): gemeinsames CSS in `asset
 
 - Branchen-Varianten per URL: `?b=handwerk` (Standard), `gastro`, `immo`, `hausverwaltung`, `kanzlei` (`BRANCHES` im Script).
 - Anker: `#inhalt`, `#so-funktionierts`, `#beispiele`, `#rechner`, `#datenschutz`, `#referenzen`, `#faq`, `#potenzialcheck`.
-- Potenzialcheck: 4 Klick-Schritte (`#quiz`), dann Kontaktformular (`#form-panel`), Bestätigung (`#thank-you`). Alle drei liegen im selben Grid-Feld der `.check-card` → die Kartenhöhe ist über alle Schritte gleich; Fehlertexte haben reservierten Platz. Layoutänderungen am Formular deshalb auch in den Quiz-Schritten (Mobile!) prüfen.
+- Kontaktformular (Anker `#potenzialcheck`, bewusst beibehalten): einfaches Formular `#form-panel` ohne vorgeschaltete Quiz-Fragen, Bestätigung `#thank-you`. Beide liegen im selben Grid-Feld der `.check-card` → die Kartenhöhe bleibt beim Wechsel gleich; Fehlertexte haben reservierten Platz.
 - Vorherige gebündelte Startseite (Claude-Design-/`x-dc`-Export): `../zyntrix-co archiv/archiv/index_bundle_20260915.html`.
 
 ## Kontaktformular-Flow (übergreifend)
 
 Im Submit-Handler von `#lead-form` (`index.html`, Script-Ende):
 
-1. Validierung, Honeypot `botcheck`, Telefon-Normalisierung; Check-Antworten, Rechnerwerte, `datenschutzvariante`, `anzeigen_branche`, `event_id` werden angehängt.
+1. Validierung, Honeypot `botcheck`, Telefon-Normalisierung; Rechnerwerte, `datenschutzvariante`, `anzeigen_branche`, `event_id` werden angehängt.
 2. `POST` an Web3Forms (`access_key` als Hidden-Field) → E-Mail.
 3. Erst bei Erfolg: fire-and-forget `POST` (JSON, ohne `access_key`) an `TELEGRAM_ENDPOINT` (Cloudflare Worker, `keepalive`). Fehler dort dürfen den Formularerfolg nie beeinflussen; leerer Endpoint = deaktiviert.
 4. `handOffLead()` legt `{eventId, ts}` unter `sessionStorage['zyntrix:lead']` ab, zeigt `#thank-you` als Rückfall und leitet nach 250 ms auf `danke.html` weiter.
