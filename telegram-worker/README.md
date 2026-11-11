@@ -78,7 +78,7 @@ Danach committen und pushen; GitHub Pages baut automatisch neu.
 curl -X POST https://zyntrix-telegram-lead.office-21e.workers.dev \
   -H 'Content-Type: application/json' \
   -H 'Origin: https://zyntrix.co' \
-  -d '{"name":"Testlauf","firma":"Testfirma","email":"test@example.com","telefon":"+43 660 1234567","zeitfresser":"Angebote schreiben"}'
+  -d '{"subject":"Neue Anfrage über zyntrix.co","formular":"anfrage","email_ok":true,"name":"Testlauf","firma":"Testfirma","email":"test@example.com","telefon":"+43 660 1234567","seite":"/","quelle":"Test"}'
 ```
 
 Erwartet: `{"success":true}` und eine Nachricht in der Gruppe. Danach das
@@ -86,10 +86,13 @@ Formular auf zyntrix.co einmal echt abschicken.
 
 ## Schutzmechanismen
 
-* **Origin-Prüfung** – nur die in `ALLOWED_ORIGINS` gelisteten Domains werden
-  angenommen, fremde Seiten bekommen 403.
+* **Origin-Prüfung** – nur die in `ALLOWED_ORIGINS` gelisteten Domains und
+  `localhost` werden angenommen, fremde Seiten bekommen 403.
+* **Drosselung** – höchstens 5 Nachrichten je IP in 10 Minuten (429, je Instanz).
+* **Pflichtfelder** – `telefon` und ein bekanntes `formular`, sonst 400.
+* **Feldliste** – nur Felder aus `FIELDS` kommen in die Nachricht.
 * **Honeypot** – ein ausgefülltes `botcheck`-Feld wird stillschweigend verworfen.
-* **Feldlängen** werden auf 1500 Zeichen gekürzt, HTML wird escaped.
+* **Werte** werden auf 500 Zeichen gekürzt (freier Text 1500), HTML wird escaped.
 
 Die Origin-Prüfung hält Browser-Aufrufe fremder Seiten ab, nicht aber
 direkte `curl`-Requests (der Origin-Header ist frei wählbar). Wer zusätzlich
@@ -105,5 +108,7 @@ npx wrangler tail
 | Antwort | Bedeutung |
 | --- | --- |
 | `origin_not_allowed` | Origin fehlt in `ALLOWED_ORIGINS` |
-| `not_configured` | Secrets nicht gesetzt |
+| `not_configured` | Secrets nicht gesetzt oder ungültig |
+| `missing_fields` | `telefon` oder `formular` fehlt |
+| `rate_limited` | mehr als 5 Anfragen je IP in 10 Minuten |
 | `telegram_failed` | Telegram lehnt ab – meist falsche Chat-ID oder Bot nicht in der Gruppe |

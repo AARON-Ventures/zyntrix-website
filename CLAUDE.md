@@ -41,19 +41,19 @@ Normales, handgeschriebenes HTML (~70 KB, eine Datei): gemeinsames CSS in `asset
 
 Im Submit-Handler von `#lead-form` (`index.html`, Script-Ende):
 
-1. Validierung, Honeypot `botcheck`, Telefon-Normalisierung; Rechnerwerte, `datenschutzvariante`, `anzeigen_branche`, `event_id` werden angehängt.
-2. `POST` an Web3Forms (`access_key` als Hidden-Field) → E-Mail.
-3. Erst bei Erfolg: fire-and-forget `POST` (JSON, ohne `access_key`) an `TELEGRAM_ENDPOINT` (Cloudflare Worker, `keepalive`). Fehler dort dürfen den Formularerfolg nie beeinflussen; leerer Endpoint = deaktiviert.
+1. Validierung, Honeypot `botcheck`, Telefon-Normalisierung; Rechnerwerte, `datenschutzvariante`, `anzeigen_branche`, `event_id` und die Herkunft (`seite`, `vorige_seite`, `quelle` – nur Pfade, ohne Speicherung, berechnet in `leadOrigin`) werden angehängt.
+2. `POST` an Web3Forms (`access_key` als Hidden-Field, Timeout 15 s) → E-Mail. Nur diese Antwort entscheidet über Erfolg/Fehler im Formular.
+3. Nach der Antwort von Web3Forms – auch bei Fehler oder Timeout – fire-and-forget `POST` (JSON, ohne `access_key`, plus `formular: 'anfrage'` und `email_ok`) an `TELEGRAM_ENDPOINT` (Cloudflare Worker, `keepalive`, `sendTelegramCopy`). Bei `email_ok: false` trägt die Telegram-Nachricht eine Warnzeile. Fehler dort werden verschluckt; leerer Endpoint = deaktiviert.
 4. `handOffLead()` legt `{eventId, ts}` unter `sessionStorage['zyntrix:lead']` ab, zeigt `#thank-you` als Rückfall und leitet nach 250 ms auf `danke.html` weiter.
 5. `danke.html` liest/löscht den Token und feuert das Meta-Pixel-`Lead`-Event. Fallback: ist der Token nach 3 s noch da, feuert `index.html` selbst – mit derselben `eventID` zur Deduplizierung. Schlüssel/Logik auf beiden Seiten synchron halten.
 
-Lokal testen: Web3Forms verschickt auch von `localhost` echte E-Mails, und das Pixel-`Lead`-Event feuert ebenfalls (verfälscht Meta-Tracking) – `fetch`/`fbq` im Browser vorher überschreiben. Der Worker lehnt `localhost` ab (403 `origin_not_allowed`, nicht in `ALLOWED_ORIGINS`), das Formular funktioniert trotzdem.
+Lokal testen: Web3Forms verschickt auch von `localhost` echte E-Mails, und das Pixel-`Lead`-Event feuert ebenfalls (verfälscht Meta-Tracking) – `fetch`/`fbq` im Browser vorher überschreiben. Der Worker nimmt `localhost` an (wie in der Web-Focus-Anleitung) – lokale Tests landen also auch in der Telegram-Gruppe; `fetch` überschreiben.
 
 Telefonfeld: Vorwahl-Dropdown (`vorwahl`) wird in `telefon` zusammengeführt und vor dem Senden entfernt (iOS-AutoFill liefert oft nationale Schreibweise).
 
 ## `telegram-worker/`
 
-Cloudflare Worker (`worker.js`), der Leads in eine Telegram-Gruppe postet, damit das Bot-Token nicht im öffentlichen Quelltext steht. Origin-Allowlist (`ALLOWED_ORIGINS` in `wrangler.toml`), Honeypot `botcheck`, Feldkürzung + HTML-Escaping. Secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. Neue Formularfelder erscheinen automatisch; Formular-Mechanikfelder gehören in `IGNORED_FIELDS`.
+Cloudflare Worker (`worker.js`), der Leads in eine Telegram-Gruppe postet, damit das Bot-Token nicht im öffentlichen Quelltext steht. Nachrichtenaufbau nach `../../Web Focus/web-focus-at/docs/2026-10-10_WF_Anleitung_Formular_Telegram_Nachricht.pdf`: fette Überschrift „Neue Anfrage von zyntrix.co“, ggf. Warnzeile, Blöcke Kontakt · Unternehmen · Angaben · Nachricht · Herkunft (Spoiler). **Nur Felder aus `FIELDS` erscheinen** – neue Formularfelder dort eintragen. Rechnerwerte, `datenschutzvariante`, `anzeigen_branche` bewusst nicht. Prüfungen: POST, Origin (`ALLOWED_ORIGINS` + localhost, ohne Origin erlaubt), JSON, 5 je IP/10 min, Honeypot, Pflicht `telefon` + bekanntes `formular`, eine Wiederholung bei 429/5xx. Secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
 
 ```bash
 cd telegram-worker
