@@ -25,7 +25,7 @@ Im Claude-Desktop-Browser: `preview_start` mit `site` (`.claude/launch.json`, Po
   - Flächen: `#F2F4F4` (Panels, Tags) · `#F9FBEE` (Hover) · `#2A5361` (Fläche auf Dunkel)
   - Nur im jeweiligen Kontext: `#C0474B` Fehler · `#B0791A` Hinweis · `#1F7A5A` Status · `#D9FDD3` WhatsApp-Bubble
 - **Schriften:** Space Grotesk (`assets/fonts/space-grotesk.woff2`) für Überschriften, Buttons, Marke; Inter (`assets/fonts/inter.woff2`) für Text. Keine Google-Fonts-Einbindung, keine weiteren Schriften. Radius `--radius` 10px; Abschnittsabstände 64–112px wie in der Referenz-Startseite.
-- **Bildsprache/Marke:** Nils-Avatar `assets/img/nils.webp`, Kundenlogos aus `assets/referenzen/`, Tonalität wie auf der Startseite (Kunden werden gesiezt).
+- **Bildsprache/Marke:** Nils-Avatar `assets/img/nils.webp`, Kundenlogos aus `assets/referenzen/` (nur Portfolio-Firmen aus `assets/logos-portfolio/` im Repo `julian7787/baratsitsgruber-com`, einfarbig in `--ink`, keine Presse-/Partnerlogos), Tonalität wie auf der Startseite (Kunden werden gesiezt).
 - Altlasten (alte Startseiten, Legacy-Design) liegen außerhalb des Repos in `../zyntrix-co archiv/` und sind keine Vorlage.
 
 ## `index.html` – Startseite (ehem. „Landingpage 2“)
