@@ -15,6 +15,7 @@
  *   TELEGRAM_CHAT_ID     – Chat-ID der Gruppe, z. B. -1001234567890 (Secret)
  *   ALLOWED_ORIGINS      – kommaseparierte Origins          (Variable)
  *   TELEGRAM_THREAD_ID   – optional: Topic-ID in Foren-Gruppen (Variable)
+ *   LEAD_LIMIT_IP/_ALL   – Rate-Limits je IP und insgesamt  (wrangler.toml)
  */
 
 // Fester Betreff des Formulars (Hidden-Field „subject“) → Überschrift.
@@ -65,6 +66,11 @@ export default {
     if (!corsOrigin) {
       return json({ success: false, error: 'origin_not_allowed' }, 403, null);
     }
+    // Der Origin-Header lässt sich außerhalb des Browsers fälschen – deshalb
+    // zusätzlich eine Obergrenze je IP-Adresse und insgesamt.
+    if (await rateLimited(request, env)) {
+      return json({ success: false, error: 'rate_limited' }, 429, corsOrigin);
+    }
     if (!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) {
       return json({ success: false, error: 'not_configured' }, 500, corsOrigin);
     }
@@ -73,6 +79,10 @@ export default {
     try {
       payload = await readPayload(request);
     } catch (err) {
+      return json({ success: false, error: 'invalid_payload' }, 400, corsOrigin);
+    }
+    // Gültiges JSON, aber kein Objekt (null, Liste, Zahl, Text).
+    if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
       return json({ success: false, error: 'invalid_payload' }, 400, corsOrigin);
     }
 
@@ -107,6 +117,19 @@ export default {
     return json({ success: true }, 200, corsOrigin);
   }
 };
+
+// Grenzen stehen in wrangler.toml ([[ratelimits]]). Fehlt eine Bindung oder
+// antwortet sie nicht, geht die Anfrage durch – ein Lead ist wichtiger.
+async function rateLimited(request, env) {
+  const ip = request.headers.get('CF-Connecting-IP') || 'unbekannt';
+  try {
+    if (env.LEAD_LIMIT_IP && !(await env.LEAD_LIMIT_IP.limit({ key: ip })).success) return true;
+    if (env.LEAD_LIMIT_ALL && !(await env.LEAD_LIMIT_ALL.limit({ key: 'alle' })).success) return true;
+  } catch (err) {
+    console.error('Rate limit check failed', err);
+  }
+  return false;
+}
 
 function allowedOrigins(env) {
   return String(env.ALLOWED_ORIGINS || '')

@@ -1,0 +1,5 @@
+# GitHub Pages: interne Dateien nicht ausliefern (Gegenstück zu .vercelignore).
+exclude:
+  - CLAUDE.md
+  - telegram-worker
+  - vercel.json

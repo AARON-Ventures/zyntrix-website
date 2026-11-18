@@ -3,3 +3,5 @@ telegram-worker/
 .claude/
 .github/
 CLAUDE.md
+_config.yml
+CNAME

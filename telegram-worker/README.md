@@ -91,10 +91,13 @@ Formular auf zyntrix.co einmal echt abschicken.
 * **Honeypot** – ein ausgefülltes `botcheck`-Feld wird stillschweigend verworfen.
 * **Feldlängen** werden auf 1500 Zeichen gekürzt, HTML wird escaped.
 
+* **Rate-Limit** – höchstens 3 Anfragen pro Minute je IP-Adresse und 20 pro
+  Minute insgesamt (`[[ratelimits]]` in `wrangler.toml`), darüber 429.
+
 Die Origin-Prüfung hält Browser-Aufrufe fremder Seiten ab, nicht aber
-direkte `curl`-Requests (der Origin-Header ist frei wählbar). Wer zusätzlich
-absichern will, aktiviert vor dem Worker eine Cloudflare-Rate-Limiting-Regel
-oder Turnstile.
+direkte `curl`-Requests (der Origin-Header ist frei wählbar). Das Rate-Limit
+begrenzt solchen Missbrauch, verhindert ihn aber nicht ganz; wer mehr braucht,
+ergänzt Turnstile.
 
 ## Logs / Fehlersuche
 
@@ -105,5 +108,7 @@ npx wrangler tail
 | Antwort | Bedeutung |
 | --- | --- |
 | `origin_not_allowed` | Origin fehlt in `ALLOWED_ORIGINS` |
+| `invalid_payload` | Inhalt ist kein JSON-Objekt bzw. kein Formular |
+| `rate_limited` | Zu viele Anfragen (je IP oder insgesamt), nach einer Minute erneut |
 | `not_configured` | Secrets nicht gesetzt |
 | `telegram_failed` | Telegram lehnt ab – meist falsche Chat-ID oder Bot nicht in der Gruppe |

@@ -13,3 +13,21 @@ ALLOWED_ORIGINS = "https://zyntrix.co,https://www.zyntrix.co"
 # die werden als Secrets gesetzt:
 #   npx wrangler secret put TELEGRAM_BOT_TOKEN
 #   npx wrangler secret put TELEGRAM_CHAT_ID
+
+# Schutz vor Missbrauch (Origin-Header ist außerhalb des Browsers fälschbar):
+# höchstens 3 Anfragen pro Minute je IP-Adresse, 20 pro Minute insgesamt.
+[[ratelimits]]
+name = "LEAD_LIMIT_IP"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 3
+  period = 60
+
+[[ratelimits]]
+name = "LEAD_LIMIT_ALL"
+namespace_id = "1002"
+
+  [ratelimits.simple]
+  limit = 20
+  period = 60
