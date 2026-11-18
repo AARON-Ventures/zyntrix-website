@@ -182,7 +182,7 @@
     <nav class="footer-links" aria-labelledby="footer-nils"><h2 id="footer-nils">Nils</h2><a href="#so-funktionierts">So funktioniert’s</a><a href="#beispiele">Beispiele</a><a href="#rechner">Rechner</a><a href="#datenschutz">Ihre Daten</a></nav>
     <nav class="footer-links" aria-labelledby="footer-zyntrix"><h2 id="footer-zyntrix">Zyntrix</h2><a href="#referenzen">Referenzen</a><a href="#team">Team</a><a href="#faq">FAQ</a></nav>
     <nav class="footer-links" aria-labelledby="footer-kontakt"><h2 id="footer-kontakt">Kontakt</h2><a href="mailto:office@zyntrix.co">office@zyntrix.co</a><a href="#potenzialcheck">Erstgespräch</a></nav>
-    <nav class="footer-links" aria-labelledby="footer-recht"><h2 id="footer-recht">Rechtliches</h2><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></nav>
+    <nav class="footer-links" aria-labelledby="footer-recht"><h2 id="footer-recht">Rechtliches</h2><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/agb">AGB</a></nav>
     <p class="brand" aria-hidden="true"><span>Z</span><span>Y</span><span>N</span><span>T</span><span>R</span><span>I</span><span>X</span></p>
     <p class="small">© 2026 Zyntrix · Wien, Österreich</p>
   </div></footer>
@@ -350,7 +350,7 @@
     return {quelle,vorige_seite:own?pagePath(ref.pathname):''};})();
   // Kopie an den Telegram-Worker: nach der Antwort von Web3Forms, ohne access_key, Fehler werden verschluckt.
   function sendTelegramCopy(data,emailOk){if(!TELEGRAM_ENDPOINT)return;try{const payload=Object.fromEntries(data);delete payload.access_key;payload.formular='anfrage';payload.email_ok=emailOk;fetch(TELEGRAM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(()=>{});}catch(error){}}
-  const THANK_YOU_PAGE='danke.html',THANK_YOU_DELAY=250;
+  const THANK_YOU_PAGE='/danke',THANK_YOU_DELAY=250;
   // Lead-Übergabe an danke.html, dort feuert das Pixel-Lead-Event. Schlüssel/Logik synchron mit danke.html halten.
   const LEAD_TOKEN_KEY='zyntrix:lead',LEAD_FALLBACK_DELAY=3000;
   function newEventId(){return globalThis.crypto?.randomUUID?.()||'lead-'+Date.now()+'-'+Math.random().toString(16).slice(2);}
