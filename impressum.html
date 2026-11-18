@@ -64,7 +64,7 @@
   <footer class="footer"><div class="wrap">
     <div>
       <p>Sie kümmern sich um Ihre Kunden.<br><span>Nils um den Rest.</span></p>
-      <div class="demo-header"><img src="assets/img/nils.webp" width="44" height="44" alt="" loading="lazy"><div><strong>Nils ist im Dienst.</strong><span>Ihr KI-Mitarbeiter · WhatsApp</span></div><span class="demo-online"><i aria-hidden="true"></i><span id="footer-clock">24/7</span></span></div>
+      <div class="demo-header"><img src="assets/img/nils.webp" width="44" height="44" alt="" loading="lazy"><div><strong>Nils ist im Dienst.</strong><span>Ihr KI-Mitarbeiter · WhatsApp</span></div></div>
     </div>
     <nav class="footer-links" aria-labelledby="footer-nils"><h2 id="footer-nils">Nils</h2><a href="/#so-funktionierts">So funktioniert’s</a><a href="/#beispiele">Beispiele</a><a href="/#rechner">Rechner</a><a href="/#datenschutz">Ihre Daten</a></nav>
     <nav class="footer-links" aria-labelledby="footer-zyntrix"><h2 id="footer-zyntrix">Zyntrix</h2><a href="/#referenzen">Referenzen</a><a href="/#team">Team</a><a href="/#faq">FAQ</a></nav>
@@ -74,8 +74,6 @@
     <p class="small">© 2026 Zyntrix · Wien, Österreich</p>
   </div></footer>
   <script>
-  // Footer: Ortszeit Wien im Status. Ohne Script bleibt „24/7“ stehen.
-  if(window.Intl){const viennaTime=new Intl.DateTimeFormat('de-AT',{timeZone:'Europe/Vienna',hour:'2-digit',minute:'2-digit'});const showViennaTime=()=>{document.getElementById('footer-clock').textContent='Wien '+viennaTime.format(new Date());};showViennaTime();setInterval(showViennaTime,15000);}
   // Footer: Auf Touch-Geräten leuchten die Buchstaben der Wortmarke unter dem Finger (Ersatz für Hover).
   const footerMark=document.querySelector('.footer .wrap > .brand');const lightLetter=event=>{if(event.pointerType==='mouse')return;const letter=document.elementFromPoint(event.clientX,event.clientY);if(!letter||letter.parentNode!==footerMark)return;letter.classList.add('is-active');clearTimeout(letter.fadeTimer);letter.fadeTimer=setTimeout(()=>letter.classList.remove('is-active'),400);};footerMark.addEventListener('pointerdown',lightLetter);footerMark.addEventListener('pointermove',lightLetter);
   </script>

@@ -69,25 +69,18 @@
         <div class="hero-visual" data-phase="complete" data-format="tasks">
           <div class="demo-header">
             <img src="assets/img/nils.webp" width="44" height="44" alt="">
-            <div><strong id="demo-heading">Nils übernimmt.</strong><span id="chat-channel">Ihr KI-Mitarbeiter · WhatsApp</span></div>
-            <span class="demo-online"><i aria-hidden="true"></i>24/7</span>
-          </div>
-          <div class="demo-formats" role="group" aria-label="Darstellung auswählen" hidden>
-            <button type="button" data-demo-format="tasks" aria-pressed="true">Aufgaben</button>
-            <button type="button" data-demo-format="chat" aria-pressed="false">Chat</button>
-            <button type="button" data-demo-format="calendar" aria-pressed="false">Kalender</button>
-            <button type="button" data-demo-format="briefing" aria-pressed="false">Überblick</button>
+            <div><strong>Nils</strong><span id="demo-status">online</span></div>
           </div>
           <div class="demo-stage">
           <div class="demo-workspace is-active" data-demo-view="tasks">
-            <div class="demo-message"><span class="demo-overline">Ihre Nachricht</span><p id="demo-request">Nils, bitte die Anfrage von Familie Berger erfassen, das Angebot vorbereiten und einen Rückruf einplanen.</p><span class="demo-sent" aria-hidden="true">19:02 <span>✓✓</span></span></div>
+            <div class="demo-message"><span class="demo-overline">Ihre Nachricht</span><p id="demo-request">Nils, bitte die Anfrage von Familie Berger erfassen, das Angebot vorbereiten und einen Rückruf einplanen.</p><span class="demo-sent" aria-hidden="true">19:02 <span></span></span></div>
             <div class="demo-tasks">
               <div class="demo-task-heading"><strong id="demo-work-label">Alles vorbereitet.</strong><span id="demo-progress-count">3 / 3</span></div>
               <div class="demo-progress" role="progressbar" aria-label="Bearbeitete Aufgaben im Beispiel" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3"><span id="demo-progress-fill"></span></div>
               <ol id="demo-task-list">
-                <li data-state="done"><span class="demo-task-icon" aria-hidden="true">✓</span><div><strong>Kundenanfrage erfassen</strong><small>Familie Berger · Bad-Sanierung</small></div><span class="demo-task-state">Erledigt</span></li>
-                <li data-state="done"><span class="demo-task-icon" aria-hidden="true">✓</span><div><strong>Angebot vorbereiten</strong><small>Mit Ihren Preisen und Leistungen</small></div><span class="demo-task-state">Bereit</span></li>
-                <li data-state="done"><span class="demo-task-icon" aria-hidden="true">✓</span><div><strong>Rückruf einplanen</strong><small>Aufgabe für morgen angelegt</small></div><span class="demo-task-state">Erledigt</span></li>
+                <li data-state="done"><span class="demo-task-icon" aria-hidden="true"></span><div><strong>Kundenanfrage erfassen</strong><small>Familie Berger · Bad-Sanierung</small></div><span class="demo-task-state">Erledigt</span></li>
+                <li data-state="done" data-complete-status="Bereit"><span class="demo-task-icon" aria-hidden="true"></span><div><strong>Angebot vorbereiten</strong><small>Mit Ihren Preisen und Leistungen</small></div><span class="demo-task-state">Bereit</span></li>
+                <li data-state="done"><span class="demo-task-icon" aria-hidden="true"></span><div><strong>Rückruf einplanen</strong><small>Aufgabe für morgen angelegt</small></div><span class="demo-task-state">Erledigt</span></li>
               </ol>
             </div>
             <div class="demo-result"><span class="demo-result-mark" aria-hidden="true">↳</span><div><strong id="demo-result-title">Für Sie bleibt nur die Freigabe.</strong><p id="demo-response">Anfrage erfasst, Rückruf eingeplant. Ihr Angebot liegt zur Prüfung bereit.</p></div></div>
@@ -97,7 +90,7 @@
             <div class="demo-chat-bubble is-user"><span class="demo-overline">Sie</span><p id="demo-chat-request"></p></div>
             <div class="demo-chat-bubble" data-reveal="1"><span class="demo-overline">Nils</span><p id="demo-chat-answer"></p></div>
             <div class="demo-chat-bubble is-user" data-reveal="2"><span class="demo-overline">Sie</span><p id="demo-chat-followup"></p></div>
-            <div class="demo-chat-bubble is-confirmation" data-reveal="3"><span class="demo-overline">Nils</span><p id="demo-chat-confirmation"></p><span class="demo-chat-check" aria-hidden="true">✓</span></div>
+            <div class="demo-chat-bubble is-confirmation" data-reveal="3"><span class="demo-overline">Nils</span><p id="demo-chat-confirmation"></p><span class="demo-chat-check" aria-hidden="true"></span></div>
             <div class="demo-typing" aria-hidden="true"><i></i><i></i><i></i><span>Nils schreibt …</span></div>
           </div>
           <div class="demo-calendar-view" data-demo-view="calendar" aria-hidden="true" inert>
@@ -108,7 +101,7 @@
               <div class="demo-week" aria-hidden="true"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span class="selected">Fr</span><span>Sa</span><span>So</span></div>
               <p class="demo-calendar-note">Ein freier Tisch ist verfügbar.</p>
             </div>
-            <div class="demo-reminder" data-reveal="2"><span aria-hidden="true">✓</span><div><strong>Auch ans Erinnern gedacht.</strong><p>Erinnerung für Donnerstag vorbereitet.</p></div></div>
+            <div class="demo-reminder" data-reveal="2"><span aria-hidden="true"></span><div><strong>Auch ans Erinnern gedacht.</strong><p>Erinnerung für Donnerstag vorbereitet.</p></div></div>
             <div class="demo-calendar-result" data-reveal="3"><span class="demo-overline">Bereit für Ihre Freigabe</span><p>Bestätigung und Erinnerung stehen. Soll ich beides für Sie einplanen?</p></div>
           </div>
           <div class="demo-briefing-view" data-demo-view="briefing" aria-hidden="true" inert>
@@ -120,12 +113,12 @@
           </div>
         </div>
         <div class="demo-navigation" aria-label="Demo steuern">
-          <button type="button" id="demo-prev" aria-label="Vorheriges Beispiel" hidden>←</button>
+          <button type="button" id="demo-prev" aria-label="Vorheriges Beispiel" hidden></button>
           <p id="demo-caption" aria-live="polite"><span id="demo-count">01 / 08</span><strong id="demo-title">Von der Anfrage zum Angebot</strong></p>
-          <button type="button" id="demo-next" aria-label="Nächstes Beispiel" hidden>→</button>
+          <button type="button" id="demo-next" aria-label="Nächstes Beispiel" hidden></button>
         </div>
       </div>
-      <div class="hero-baseline"><span>Sie kümmern sich um Ihre Kunden.</span><span>Nils um den Rest.</span><a href="#so-funktionierts" aria-label="So funktioniert Nils">Nils entdecken <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-baseline"><span>Sie kümmern sich um Ihre Kunden.</span><span>Nils um den Rest.</span><a href="#so-funktionierts" aria-label="So funktioniert Nils">Nils entdecken <span aria-hidden="true"></span></a></div>
     </section>
     <section class="trust" aria-label="Bestehende Kunden"><div class="wrap trust-inner"><p class="trust-label">Bereits im Einsatz <br>bei Unternehmen wie</p><div class="logos"><img class="logo" src="assets/referenzen/logo-aaron.webp" alt="AARON" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-clara.webp" alt="CLARA Compliance" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-tickety.webp" alt="Tickety" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-ahdg.webp" alt="Abrahairdabra" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-press-enter.webp" alt="ADANA · Press Enter" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-valeria.webp" alt="Valeria Asset Management" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-atensis.webp" alt="Atensis" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-evercrest-ventures.webp" alt="Evercrest Ventures" width="120" height="40" loading="eager" decoding="async"><img class="logo" src="assets/referenzen/logo-pss.webp" alt="Pro Sports Solutions" width="120" height="40" loading="eager" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-aaron.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-clara.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-tickety.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-ahdg.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-press-enter.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-valeria.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-atensis.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-evercrest-ventures.webp" alt="" width="120" height="40" decoding="async"><img class="logo" aria-hidden="true" src="assets/referenzen/logo-pss.webp" alt="" width="120" height="40" decoding="async"></div></div></section>
     <section id="nils-film" class="section nils-film" aria-labelledby="nils-film-title">
@@ -142,7 +135,7 @@
     <section id="beispiele" class="section scenes" aria-labelledby="scenes-title"><div class="wrap"><div class="section-top"><div><div class="eyebrow">02 / Ihr Alltag mit Nils</div><h2 id="scenes-title">Weniger „mach ich später“.<br>Mehr erledigt.</h2></div><p>Drei mögliche Abläufe. Eingerichtet für die Aufgaben, die Sie wirklich Zeit kosten.</p></div><div class="grid3" id="scene-cards"><article class="card scene"><span class="scene-time">22:34</span><h3>Die Anfrage wartet nicht.</h3><p>Ein Kunde meldet einen Rohrbruch. Nils erfasst die Details und informiert den vereinbarten Notfallkontakt.</p></article><article class="card scene"><span class="scene-time">16:15</span><h3>Vom Einsatz direkt zur Rechnung.</h3><p>Ihre Sprachnotiz vom Einsatz wird zum Rechnungsentwurf. Sie prüfen und geben frei.</p></article><article class="card scene"><span class="scene-time">07:00</span><h3>Es regnet. Alle wissen Bescheid.</h3><p>Nils bereitet die Nachricht zur Terminverschiebung vor und verständigt Kunden nach Ihrer Freigabe.</p></article></div><div class="section-bottom"><a class="text-link" href="#potenzialcheck">Meinen Anwendungsfall zeigen</a><span class="small">Sie bestimmen die Regeln.<br>Nils hält sich daran.</span></div></div></section>
     <section id="rechner" class="section roi" aria-labelledby="roi-title"><div class="wrap roi-layout"><div><div class="eyebrow">03 / Selbst rechnen</div><h2 id="roi-title">Was ist Ihre<br>Bürozeit wert?</h2><p class="roi-intro">Stellen Sie die Regler auf Ihren Alltag ein. So wird sichtbar, welcher Arbeitswert in wiederkehrenden Aufgaben steckt.</p><div class="ranges"><div><label class="range-label" for="hours">Büroarbeit pro Woche <output id="hours-output" for="hours">15 Std.</output></label><input id="hours" type="range" min="1" max="40" value="15"><div class="range-ends"><span>1 Stunde</span><span>40 Stunden</span></div></div><div><label class="range-label" for="rate">Was kostet Sie eine Stunde? <output id="rate-output" for="rate">35 €</output></label><input id="rate" type="range" min="15" max="150" step="5" value="35"><div class="range-ends"><span>15 €</span><span>150 €</span></div></div></div></div><div class="roi-result"><p class="result-label">Arbeitswert Ihrer Bürozeit</p><div class="roi-amount"><output id="roi-output" for="hours rate">2.275 €</output></div><p class="per-month">pro Monat</p><hr><p class="small">Das ist ein Rechenbeispiel, keine garantierte Ersparnis. Welchen Anteil Nils übernehmen kann, klären wir anhand Ihrer Abläufe.</p><p class="formula" id="roi-formula">15 Std. × 35 € × 52 ÷ 12 Monate</p></div></div></section>
     <section class="section" aria-labelledby="own-title"><div class="wrap grid2 ownership"><div><div class="eyebrow">04 / Kaufen statt mieten</div><h2 id="own-title">Ein eigener Mitarbeiter.<br>Eine eigene Box.</h2><p>Sie investieren in Hardware und eine Einrichtung für Ihren Betrieb. Die Box bleibt Ihr Eigentum. Den Umfang und den Preis legen wir vor dem Start gemeinsam fest.</p><a class="text-link" href="#potenzialcheck">Finden Sie heraus, was Sie brauchen</a><p class="small">Laufende Kosten für Modelle, Betrieb und optionale Betreuung weisen wir im Angebot separat aus.</p></div><div class="value-card"><div class="eyebrow">Ihr Betrieb. Ihr System.</div><h3>Einrichten. Nutzen. Behalten.</h3><div class="value-row"><span>Hardware</span><strong>Gehört Ihnen</strong></div><div class="value-row"><span>Einrichtung</span><strong>Für Ihre Abläufe</strong></div><div class="value-row"><span>Bedienung</span><strong id="ownership-channel">WhatsApp oder Telegram</strong></div><div class="value-row"><span>Kosten</span><strong>Vorab transparent</strong></div><p class="small">Einmalige Anschaffung statt einer gemieteten Box. Ob eine monatliche Zahlungsoption passt, besprechen wir persönlich.</p></div></div></section>
-    <section id="datenschutz" class="section privacy" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div><div class="eyebrow">05 / Ihre Daten. Ihre Entscheidung.</div><h2 id="privacy-title">Sie entscheiden,<br>wo Ihre Daten liegen.</h2><p class="privacy-intro">Wir legen die Verarbeitung vor dem Start fest. Mit dokumentierten Datenflüssen, klaren Freigaben und passendem AV-Vertrag.</p><div class="privacy-tags"><span>✓ Drei Betriebsvarianten</span><span>✓ Persönliche Abstimmung</span></div></div><div><div class="segmented" role="group" aria-label="Datenschutzvariante wählen"><button type="button" data-privacy="cloud" aria-pressed="false">Cloud</button><button type="button" data-privacy="hybrid" aria-pressed="true">Hybrid</button><button type="button" data-privacy="local" aria-pressed="false">100 % lokal</button></div><div class="privacy-panel" aria-live="polite"><h3 id="privacy-heading">Das Beste aus beiden Welten.</h3><p id="privacy-copy">Sensible Inhalte bleiben lokal. Für ausgewählte Aufgaben können Cloud-Modelle genutzt werden. Wir dokumentieren, welche Daten wohin gehen. Externe Dienste wie WhatsApp haben eigene Datenflüsse.</p></div></div></div></section>
+    <section id="datenschutz" class="section privacy" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div><div class="eyebrow">05 / Ihre Daten. Ihre Entscheidung.</div><h2 id="privacy-title">Sie entscheiden,<br>wo Ihre Daten liegen.</h2><p class="privacy-intro">Wir legen die Verarbeitung vor dem Start fest. Mit dokumentierten Datenflüssen, klaren Freigaben und passendem AV-Vertrag.</p><div class="privacy-tags"><span>Drei Betriebsvarianten</span><span>Persönliche Abstimmung</span></div></div><div><div class="segmented" role="group" aria-label="Datenschutzvariante wählen"><button type="button" data-privacy="cloud" aria-pressed="false">Cloud</button><button type="button" data-privacy="hybrid" aria-pressed="true">Hybrid</button><button type="button" data-privacy="local" aria-pressed="false">100 % lokal</button></div><div class="privacy-panel" aria-live="polite"><h3 id="privacy-heading">Das Beste aus beiden Welten.</h3><p id="privacy-copy">Sensible Inhalte bleiben lokal. Für ausgewählte Aufgaben können Cloud-Modelle genutzt werden. Wir dokumentieren, welche Daten wohin gehen. Externe Dienste wie WhatsApp haben eigene Datenflüsse.</p></div></div></div></section>
     <section id="referenzen" class="section" aria-labelledby="proof-title"><div class="wrap"><div class="section-top"><div><div class="eyebrow">06 / Aus dem echten Betrieb</div><h2 id="proof-title">Keine Folien.<br>Laufende Abläufe.</h2></div></div><div class="reference"><blockquote class="quote"><p id="reference-quote">„Heute bekomme ich den Statusbericht auf Zuruf, mit allen aktuellen Kennzahlen.“</p><footer id="reference-source">Geschäftsführung · AARON – Immobilien &amp; Management GmbH<br>Beteiligungsverwaltung · Auszug aus einer Kundenstimme</footer></blockquote><div><p class="reference-note" id="reference-note">Sie möchten es aus erster Hand hören? Auf Wunsch fragen wir einen passenden Referenzkunden für ein direktes Gespräch an. Ohne uns im Raum.</p><a class="text-link" href="#potenzialcheck">Meinen Betrieb besprechen</a></div></div></div></section>
     <section id="team" class="section" aria-labelledby="team-title">
       <div class="wrap">
@@ -176,15 +169,15 @@
         <div class="section-bottom"><a class="text-link" href="#potenzialcheck">Lernen wir uns kennen</a><span class="small muted">Vier Menschen und Nils. Ein gemeinsames Ziel:<br>weniger Büroarbeit für Ihren Betrieb.</span></div>
       </div>
     </section>
-    <section class="section promises" aria-labelledby="promises-title"><div class="wrap"><div class="section-top"><div><div class="eyebrow">08 / Unsere Zusagen</div><h2 id="promises-title">Vorher klar. Nachher überprüfbar.</h2></div></div><div class="promise-grid"><article class="promise"><span class="checkmark" aria-hidden="true">✓</span><div><h3>Der zweite Termin geht auf uns.</h3><p>Wenn nach dem Erstgespräch noch Fragen offen sind, gehen wir Ihren konkreten Ablauf in einem kostenlosen Zweittermin durch.</p></div></article><article class="promise"><span class="checkmark" aria-hidden="true">✓</span><div><h3>30 Tage. Ein schriftliches Ziel.</h3><p>Wir definieren vor dem Start, woran Sie den Erfolg messen. Nach 30 Tagen prüfen wir gemeinsam, was im Alltag funktioniert.</p></div></article></div></div></section>
+    <section class="section promises" aria-labelledby="promises-title"><div class="wrap"><div class="section-top"><div><div class="eyebrow">08 / Unsere Zusagen</div><h2 id="promises-title">Vorher klar. Nachher überprüfbar.</h2></div></div><div class="promise-grid"><article class="promise"><span class="checkmark" aria-hidden="true"></span><div><h3>Der zweite Termin geht auf uns.</h3><p>Wenn nach dem Erstgespräch noch Fragen offen sind, gehen wir Ihren konkreten Ablauf in einem kostenlosen Zweittermin durch.</p></div></article><article class="promise"><span class="checkmark" aria-hidden="true"></span><div><h3>30 Tage. Ein schriftliches Ziel.</h3><p>Wir definieren vor dem Start, woran Sie den Erfolg messen. Nach 30 Tagen prüfen wir gemeinsam, was im Alltag funktioniert.</p></div></article></div></div></section>
     <section id="faq" class="section" aria-labelledby="faq-title"><div class="wrap faq-layout"><div><div class="eyebrow">09 / Noch eine Frage?</div><h2 id="faq-title">Gut, dass Sie<br>nachfragen.</h2></div><div class="faq-list"><details name="nils-faq"><summary>Ich bin kein IT-Mensch. Klappt das trotzdem?</summary><p>Sie geben Aufgaben in normaler Sprache. Wir richten Nils ein, zeigen Ihnen die Bedienung und üben mit echten Abläufen aus Ihrem Betrieb. Im lokalen Safe-Betrieb nutzen wir einen passenden internen Zugang.</p></details><details name="nils-faq"><summary>Wir haben schon ChatGPT oder Copilot.</summary><p>Wenn Ihr Team damit gut arbeitet, ist das eine gute Basis. Nils ist dann interessant, wenn Aufgaben mit Ihrem Betriebswissen, Ihren Vorlagen und Ihren Systemen wiederkehrend erledigt werden sollen. Im Gespräch klären wir ehrlich, ob das für Sie einen Mehrwert hat.</p></details><details name="nils-faq"><summary>Was kostet Nils? Rechnet sich das für mich?</summary><p>Der Preis hängt von Einrichtung, Abläufen und Anbindungen ab. Sie bekommen vor dem Start ein Angebot mit Anschaffung und laufenden Kosten. Der Rechner oben zeigt den Arbeitswert Ihrer Bürozeit; den tatsächlich entlastbaren Anteil prüfen wir gemeinsam.</p></details><details name="nils-faq"><summary>Was passiert, wenn Nils einen Fehler macht?</summary><p>KI kann Fehler machen. Deshalb richten wir Freigaben und Grenzen ein. Angebote, Rechnungen und sensible Antworten können zunächst als Entwurf bei Ihnen landen. Sie entscheiden, welche Aufgaben später selbstständig laufen.</p></details><details name="nils-faq"><summary>Muss ich meine bestehenden Programme ersetzen?</summary><p>Wir prüfen die Anbindung Ihrer vorhandenen Programme. Ob und wie das funktioniert, hängt von deren Schnittstellen und Zugriffsrechten ab. Das klären wir vor dem Angebot.</p></details><details name="nils-faq"><summary>Bleiben wirklich alle Daten bei mir?</summary><p>Das hängt von der Variante ab. Vollständig lokale Verarbeitung setzt lokale Modelle und einen internen Zugang voraus. WhatsApp ist ein externer Dienst und gehört nicht zu einem vollständig lokalen Datenweg.</p></details><details name="nils-faq"><summary>Wie lange dauert die Einrichtung?</summary><p>Wir planen den Start in 30 Tagen mit fünf abgestimmten Terminen. Umfang, benötigte Zugänge und Ihre Mitwirkung halten wir vorab fest. Bei komplexen Anbindungen besprechen wir den Zeitplan individuell.</p></details><details name="nils-faq"><summary>Was, wenn ich noch nicht weiß, wo ich starten soll?</summary><p>Genau dafür ist das kostenlose Erstgespräch da. Bringen Sie einen Ablauf mit, der Sie regelmäßig Zeit kostet.</p></details></div></div></section>
     <section class="section contact" id="potenzialcheck" aria-labelledby="contact-title"><div class="wrap contact-layout"><div class="contact-copy"><div class="eyebrow">10 / Ihr nächster Schritt</div><h2 id="contact-title">Wo kann Nils<br>Ihnen Arbeit abnehmen?</h2><p>Hinterlassen Sie Ihre Kontaktdaten. Wir melden uns persönlich und schauen gemeinsam auf Ihren Betrieb.</p><div class="contact-points"><span>Kostenlos &amp; unverbindlich</span><span>30 Minuten</span><span>Video oder vor Ort</span></div><noscript><p class="no-js">Für das Kontaktformular bitte JavaScript aktivieren. Sie erreichen uns auch direkt unter <a href="mailto:office@zyntrix.co">office@zyntrix.co</a>.</p></noscript></div><div class="check-card"><div id="form-panel"><h3 id="result-title" tabindex="-1">Lernen wir Ihren Betrieb kennen.</h3><form id="lead-form"><input type="hidden" name="access_key" value="818d8a76-eb2a-446d-998b-7d0798c309ad"><input type="hidden" name="subject" value="Neue Anfrage über zyntrix.co"><input type="hidden" name="from_name" value="Zyntrix Website"><div class="honeypot" aria-hidden="true"><label>Dieses Feld leer lassen<input name="botcheck" type="text" tabindex="-1" autocomplete="off"></label></div><div class="fields"><label class="field" for="lead-name">Ihr Name<input id="lead-name" name="name" autocomplete="name" required maxlength="100"></label><label class="field" for="lead-company">Firma<input id="lead-company" name="firma" autocomplete="organization" required maxlength="150"></label><label class="field field-email" for="lead-email">E-Mail<input id="lead-email" name="email" type="email" autocomplete="email" required maxlength="150"></label><div class="field field-phone"><label for="lead-phone">Telefon</label><div class="phone-row"><select id="lead-vorwahl" name="vorwahl" aria-label="Ländervorwahl"><option value="+43" selected>AT +43</option><option value="+49">DE +49</option><option value="+41">CH +41</option><option value="+39">IT +39</option><option value="">Andere</option></select><input id="lead-phone" name="telefon" type="tel" autocomplete="tel" placeholder="664 1234567" required maxlength="40"></div></div></div><label class="consent-check"><input name="dsgvo" type="checkbox" required value="Kontaktaufnahme zugestimmt"><span>Sie dürfen mich zu meiner Anfrage kontaktieren. Hinweise zur Verarbeitung finden Sie unter <a href="#privacy-dialog" data-dialog="privacy-dialog">Datenschutz</a>.</span></label><button class="button form-button" type="submit" id="submit-button">Kostenloses Erstgespräch anfragen</button><p class="form-error" id="form-error" role="alert" hidden></p></form></div>
-    <div class="thank-you" id="thank-you" hidden><div class="thanks-mark" aria-hidden="true">✓</div><h3 id="thanks-title" tabindex="-1">Vielen Dank. Ihre Anfrage ist angekommen.</h3><p>Wir melden uns persönlich bei Ihnen, um einen passenden Termin zu vereinbaren.</p><ol><li>Wir sehen uns Ihre Anfrage an.</li><li>Wir besprechen einen Ablauf aus Ihrem Betrieb.</li><li>Sie erfahren, ob und wie Nils helfen kann.</li></ol><p class="small">Sie müssen nichts vorbereiten. Ein Beispiel aus Ihrem Arbeitsalltag reicht.</p><a class="text-link" href="mailto:office@zyntrix.co">Eine Frage ergänzen</a></div></div></div></section>
+    <div class="thank-you" id="thank-you" hidden><div class="thanks-mark" aria-hidden="true"></div><h3 id="thanks-title" tabindex="-1">Vielen Dank. Ihre Anfrage ist angekommen.</h3><p>Wir melden uns persönlich bei Ihnen, um einen passenden Termin zu vereinbaren.</p><ol><li>Wir sehen uns Ihre Anfrage an.</li><li>Wir besprechen einen Ablauf aus Ihrem Betrieb.</li><li>Sie erfahren, ob und wie Nils helfen kann.</li></ol><p class="small">Sie müssen nichts vorbereiten. Ein Beispiel aus Ihrem Arbeitsalltag reicht.</p><a class="text-link" href="mailto:office@zyntrix.co">Eine Frage ergänzen</a></div></div></div></section>
   </main>
   <footer class="footer"><div class="wrap">
     <div>
       <p>Sie kümmern sich um Ihre Kunden.<br><span>Nils um den Rest.</span></p>
-      <div class="demo-header"><img src="assets/img/nils.webp" width="44" height="44" alt="" loading="lazy"><div><strong>Nils ist im Dienst.</strong><span>Ihr KI-Mitarbeiter · WhatsApp</span></div><span class="demo-online"><i aria-hidden="true"></i><span id="footer-clock">24/7</span></span></div>
+      <div class="demo-header"><img src="assets/img/nils.webp" width="44" height="44" alt="" loading="lazy"><div><strong>Nils ist im Dienst.</strong><span>Ihr KI-Mitarbeiter · WhatsApp</span></div></div>
     </div>
     <nav class="footer-links" aria-labelledby="footer-nils"><h2 id="footer-nils">Nils</h2><a href="#so-funktionierts">So funktioniert’s</a><a href="#beispiele">Beispiele</a><a href="#rechner">Rechner</a><a href="#datenschutz">Ihre Daten</a></nav>
     <nav class="footer-links" aria-labelledby="footer-zyntrix"><h2 id="footer-zyntrix">Zyntrix</h2><a href="#referenzen">Referenzen</a><a href="#team">Team</a><a href="#faq">FAQ</a></nav>
@@ -226,7 +219,6 @@
     activeBranch=key; const b=BRANCHES[key]; const local=key==='kanzlei';
     $('nils-film').hidden=local;
     $('hero-description').textContent=b.description;
-    $('chat-channel').textContent=local?'Ihr KI-Mitarbeiter · intern':'Ihr KI-Mitarbeiter · WhatsApp';
     $('steps-title').replaceChildren(document.createTextNode(local?'Ihr Wissen.':'Sie können WhatsApp?'),document.createElement('br'),document.createTextNode(local?'Ihr interner Zugang.':'Dann können Sie Nils.'));
     $('steps-description').textContent=local?'Einzelfall prüfen, lokal einrichten, gemeinsam testen.':'Kein neues Dashboard. Kein Softwareprojekt. Drei Schritte zu weniger Büroarbeit.';
     $('step-chat-copy').textContent=local?'Sie stellen Ihre Frage über einen internen Zugang. Sensible Daten bleiben im lokalen System.':'Eine Nachricht oder Sprachnotiz per WhatsApp. So, wie Sie Ihrem Team eine Aufgabe geben.';
@@ -273,12 +265,15 @@
   const demoVisual = document.querySelector('.hero-visual');
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   let demoIndex = 0, demoStep = 3, demoTimer = null, demoInView = !('IntersectionObserver' in window);
+  // Automatischer Wechsel: läuft, bis jemand selbst blättert; ruht, solange Zeiger, Finger oder Fokus auf der Karte liegen.
+  let demoAuto = true, demoHover = false, demoFocus = false;
   function updateDemoState() {
     const complete = demoStep === 3;
     demoVisual.dataset.step = String(demoStep);
     document.querySelectorAll('[data-reveal]').forEach(node => { node.classList.toggle('is-revealed', Number(node.dataset.reveal) <= demoStep); });
     demoVisual.dataset.phase = complete ? 'complete' : 'working';
     demoVisual.classList.toggle('paused', !demoInView || document.hidden);
+    $('demo-status').textContent = complete ? 'online' : 'schreibt …';
     $('demo-work-label').textContent = complete ? 'Alles vorbereitet.' : 'Nils kümmert sich darum';
     $('demo-progress-count').textContent = demoStep + ' / 3';
     document.querySelector('.demo-progress').setAttribute('aria-valuenow', String(demoStep));
@@ -286,28 +281,26 @@
     [...$('demo-task-list').children].forEach((row, i) => {
       const state = i < demoStep ? 'done' : i === demoStep ? 'active' : 'waiting';
       row.dataset.state = state;
-      row.querySelector('.demo-task-icon').textContent = state === 'done' ? '✓' : '';
       row.querySelector('.demo-task-state').textContent = state === 'done' ? row.dataset.completeStatus : state === 'active' ? 'In Arbeit' : 'Danach';
     });
   }
   function scheduleDemo() {
     window.clearTimeout(demoTimer);
     updateDemoState();
-    if (demoStep === 3 || !demoInView || document.hidden || motionPreference.matches) return;
-    demoTimer = window.setTimeout(() => { demoStep++; scheduleDemo(); }, 2200);
+    if (!demoInView || document.hidden || motionPreference.matches) return;
+    if (demoStep < 3) demoTimer = window.setTimeout(() => { demoStep++; scheduleDemo(); }, 1100);
+    else if (demoAuto && !demoHover && !demoFocus) demoTimer = window.setTimeout(() => renderDemo(demoIndex + 1), 5000);
   }
   function renderDemo(index) {
     demoIndex = (index + demos.length) % demos.length;
     const example = demos[demoIndex];
     demoVisual.dataset.format = example.format;
-    $('demo-heading').textContent = ({tasks:'Nils übernimmt.',chat:'Nils antwortet.',calendar:'Nils denkt mit.',briefing:'Ihr Tag mit Nils.'})[example.format];
     document.querySelectorAll('[data-demo-view]').forEach(view => {
       const active = view.dataset.demoView === example.format;
       view.classList.toggle('is-active', active);
       view.setAttribute('aria-hidden', String(!active));
       view.inert = !active;
     });
-    document.querySelectorAll('[data-demo-format]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.demoFormat === example.format)));
     // Populate the chat even while inactive, so its full height stays reserved.
     const chatExample = example.format === 'chat' ? example : demos.find(item => item.format === 'chat');
     const chat = demoChats[chatExample.key];
@@ -331,19 +324,18 @@
   }
   for (const [id,direction] of [['demo-prev',-1],['demo-next',1]]) {
     $(id).hidden = false;
-    $(id).addEventListener('click',() => renderDemo(demoIndex + direction));
+    $(id).addEventListener('click',() => { demoAuto = false; $('demo-caption').setAttribute('aria-live','polite'); renderDemo(demoIndex + direction); });
   }
-  document.querySelector('.demo-formats').hidden = false;
-  document.querySelectorAll('[data-demo-format]').forEach(button => {
-    const index = demos.findIndex(example => example.format === button.dataset.demoFormat);
-    button.hidden = index < 0;
-    button.addEventListener('click', () => renderDemo(index));
-  });
+  // Solange die Beispiele von selbst wechseln, bleibt die Ansage für Screenreader stumm.
+  if (!motionPreference.matches) $('demo-caption').setAttribute('aria-live','off');
+  const demoRegion = document.querySelector('.hero-demo');
+  for (const [type,hover] of [['pointerenter',true],['pointerleave',false],['pointercancel',false]]) demoRegion.addEventListener(type,() => { demoHover = hover; scheduleDemo(); });
+  for (const [type,focus] of [['focusin',true],['focusout',false]]) demoRegion.addEventListener(type,() => { demoFocus = focus; scheduleDemo(); });
   document.addEventListener('visibilitychange', scheduleDemo);
   if ('IntersectionObserver' in window) new IntersectionObserver(entries => {
     demoInView = entries[0].isIntersecting; scheduleDemo();
   }, {threshold: .25}).observe(demoVisual);
-  motionPreference.addEventListener('change', () => { if (motionPreference.matches) demoStep = 3; scheduleDemo(); });
+  motionPreference.addEventListener('change', () => { if (motionPreference.matches) { demoStep = 3; $('demo-caption').setAttribute('aria-live','polite'); } scheduleDemo(); });
   renderDemo(0);
   const money = new Intl.NumberFormat('de-DE',{maximumFractionDigits:0}); // Betrag wie überall auf der Seite: „2.275 €“
   function roiValue(){return Math.round(Number($('hours').value)*Number($('rate').value)*52/12);}
@@ -421,8 +413,6 @@
   document.querySelectorAll('.faq-list details').forEach(item=>item.addEventListener('toggle',()=>{if(item.open)document.querySelectorAll('.faq-list details').forEach(other=>{if(other!==item)other.open=false;});}));
   document.querySelectorAll('[data-dialog]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();$(link.dataset.dialog).showModal();}));
   document.querySelectorAll('[data-close-dialog]').forEach(button=>button.addEventListener('click',()=>button.closest('dialog').close()));
-  // Footer: Ortszeit Wien im Status. Ohne Script bleibt „24/7“ stehen.
-  if(window.Intl){const viennaTime=new Intl.DateTimeFormat('de-AT',{timeZone:'Europe/Vienna',hour:'2-digit',minute:'2-digit'});const showViennaTime=()=>{$('footer-clock').textContent='Wien '+viennaTime.format(new Date());};showViennaTime();setInterval(showViennaTime,15000);}
   // Footer: Auf Touch-Geräten leuchten die Buchstaben der Wortmarke unter dem Finger (Ersatz für Hover).
   const footerMark=document.querySelector('.footer .wrap > .brand');const lightLetter=event=>{if(event.pointerType==='mouse')return;const letter=document.elementFromPoint(event.clientX,event.clientY);if(!letter||letter.parentNode!==footerMark)return;letter.classList.add('is-active');clearTimeout(letter.fadeTimer);letter.fadeTimer=setTimeout(()=>letter.classList.remove('is-active'),400);};footerMark.addEventListener('pointerdown',lightLetter);footerMark.addEventListener('pointermove',lightLetter);
   </script>
